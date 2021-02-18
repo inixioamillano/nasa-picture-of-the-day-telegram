@@ -1,0 +1,23 @@
+{
+  "name": "telegram-astronomic-daily-bot",
+  "version": "1.0.0",
+  "description": "Sends the Astronopic picture of the day selected by the NASA programatically to a Telegram Channel",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "nasa",
+    "telegram",
+    "apod"
+  ],
+  "author": "Inixio Amillano Casteig",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "cron": "^1.8.2",
+    "dotenv": "^8.2.0",
+    "node-telegram-bot-api": "^0.51.0"
+  }
+}
