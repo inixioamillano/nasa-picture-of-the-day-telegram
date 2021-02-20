@@ -9,7 +9,7 @@ function sendPhoto(dateStr) {
     axios.get(`https://api.nasa.gov/planetary/apod?api_key=${process.env.NASA_API_KEY}${dateStr ? `&date=${dateStr}` : ''}`).then(res => {
         const {data} = res;
         const url = data.hdurl ? data.hdurl : data.url;
-        const caption = `${dateStr ? `On this day ${dateStr.split('-')[0]}\n\n` : ''}🚀 ${data.title} 🪐${data.copyright ? `\n\nCopyright: ${data.copyright}` : ''}`;
+        const caption = `${dateStr ? `On this day in ${dateStr.split('-')[0]}\n\n` : ''}🚀 ${data.title} 🪐${data.copyright ? `\n\nCopyright: ${data.copyright}` : ''}`;
         if (data.media_type === 'video'){
             bot.sendMessage(`@${process.env.TELEGRAM_CHANNEL_ID}`, `${caption}\n${url}`);
         } else {
