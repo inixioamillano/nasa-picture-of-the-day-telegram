@@ -25,7 +25,7 @@ var job = new CronJob('0 21 * * *', function() {
 
 job.start();
 
-const onThisDayJob = new CronJob('10 12 * * *', () => {
+const onThisDayJob = new CronJob('15 12 * * *', () => {
     const year = Math.floor(Math.random()*20)+1; // Number between 1 and 20
     const today = new Date();
     const month = date.getMonth()+1;
