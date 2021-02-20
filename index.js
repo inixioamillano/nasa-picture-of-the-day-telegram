@@ -25,11 +25,15 @@ var job = new CronJob('0 21 * * *', function() {
 
 job.start();
 
-const onThisDayJob = new CronJob('15 12 * * *', () => {
+const onThisDayJob = new CronJob('0 13 * * *', () => {
     const year = Math.floor(Math.random()*20)+1; // Number between 1 and 20
     const today = new Date();
     const month = date.getMonth()+1;
     const day = date.getDate();
     const date = `200${year}-${month < 10 ? `0${month}` : month}-${day < 10 ? `0${day}` : day}`;
     sendPhoto(date);
-})
+}, null, true, 'Europe/Madrid');
+
+onThisDayJob.start();
+
+bot.on('polling_error', (err) => console.log(err))
